@@ -1,0 +1,125 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375}{number\+Of\+Roots}} \{ \mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}{I\+N\+F\+\_\+\+R\+O\+O\+TS}} = -\/1, 
+\mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}{N\+O\+\_\+\+R\+O\+O\+TS}}, 
+\mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}{O\+N\+E\+\_\+\+R\+O\+OT}}, 
+\mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}{T\+W\+O\+\_\+\+R\+O\+O\+TS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_a1ad918ef2fe7a690fb3b42f44c7be1f4}{Is\+Zero}} (double a)
+\begin{DoxyCompactList}\small\item\em This funcion check, that double number is a zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ac1ba2f9d576c716484869414f91b7151}{Solve\+Linear}} (double a, double b, double $\ast$x)
+\item 
+int \mbox{\hyperlink{main_8cpp_ac1dcbe4eb26d3fc8d42250855dbf56bb}{Solve\+Quadratic}} (double a, double b, double c, double $\ast$x1, double $\ast$x2)
+\item 
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Andrey Krotov 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{main_8cpp_ab4611c2fee0b205012e761712cdc6375}\label{main_8cpp_ab4611c2fee0b205012e761712cdc6375}} 
+\index{main.cpp@{main.cpp}!numberOfRoots@{numberOfRoots}}
+\index{numberOfRoots@{numberOfRoots}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{numberOfRoots}{numberOfRoots}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_8cpp_ab4611c2fee0b205012e761712cdc6375}{number\+Of\+Roots}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INF\_ROOTS@{INF\_ROOTS}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!INF\_ROOTS@{INF\_ROOTS}}}\mbox{\Hypertarget{main_8cpp_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}\label{main_8cpp_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}} 
+I\+N\+F\+\_\+\+R\+O\+O\+TS&an infinite number of roots ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ROOTS@{NO\_ROOTS}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!NO\_ROOTS@{NO\_ROOTS}}}\mbox{\Hypertarget{main_8cpp_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}\label{main_8cpp_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}} 
+N\+O\+\_\+\+R\+O\+O\+TS&the equation has no roots ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONE\_ROOT@{ONE\_ROOT}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!ONE\_ROOT@{ONE\_ROOT}}}\mbox{\Hypertarget{main_8cpp_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}\label{main_8cpp_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}} 
+O\+N\+E\+\_\+\+R\+O\+OT&the equation has one root ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TWO\_ROOTS@{TWO\_ROOTS}!main.cpp@{main.cpp}}\index{main.cpp@{main.cpp}!TWO\_ROOTS@{TWO\_ROOTS}}}\mbox{\Hypertarget{main_8cpp_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}\label{main_8cpp_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}} 
+T\+W\+O\+\_\+\+R\+O\+O\+TS&the equation has two roots ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a1ad918ef2fe7a690fb3b42f44c7be1f4}\label{main_8cpp_a1ad918ef2fe7a690fb3b42f44c7be1f4}} 
+\index{main.cpp@{main.cpp}!IsZero@{IsZero}}
+\index{IsZero@{IsZero}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{IsZero()}{IsZero()}}
+{\footnotesize\ttfamily bool Is\+Zero (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})}
+
+
+
+This funcion check, that double number is a zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Is a number to check \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ac1ba2f9d576c716484869414f91b7151}\label{main_8cpp_ac1ba2f9d576c716484869414f91b7151}} 
+\index{main.cpp@{main.cpp}!SolveLinear@{SolveLinear}}
+\index{SolveLinear@{SolveLinear}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveLinear()}{SolveLinear()}}
+{\footnotesize\ttfamily int Solve\+Linear (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double $\ast$}]{x }\end{DoxyParamCaption})}
+
+This function solves equations of the form \char`\"{}a $\ast$ x + b = 0\char`\"{}. Where x is unknown variable. The result of the function is the number of roots and the root itself, which is placed in x. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & double, name\+: a -\/ is a first argument of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & double, name\+: b -\/ is a second argument of equation. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em type} & double$\ast$, name\+: x -\/ is a variable, which we are seaching. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ac1dcbe4eb26d3fc8d42250855dbf56bb}\label{main_8cpp_ac1dcbe4eb26d3fc8d42250855dbf56bb}} 
+\index{main.cpp@{main.cpp}!SolveQuadratic@{SolveQuadratic}}
+\index{SolveQuadratic@{SolveQuadratic}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveQuadratic()}{SolveQuadratic()}}
+{\footnotesize\ttfamily int Solve\+Quadratic (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
+
+This function solves equations of the form \char`\"{}a $\ast$ x$^\wedge$2 + b $\ast$ x + c = 0\char`\"{}. Where x is unknown variable. The result of the function is the number of roots and the root itself, which is placed in x. Function provides for all possible situations and degenerate cases possible for a quadratic equation
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type} & double, name\+: a -\/ is a first argument of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & double, name\+: b -\/ is a second argument of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & double, name\+: c -\/ is a third argument of eqution. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em type} & double$\ast$, name\+: x1 -\/ is one of the variables, which we are seaching. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em type} & double$\ast$, name\+: x2 -\/ is other variable, which we are seaching. \\
+\hline
+\end{DoxyParams}
