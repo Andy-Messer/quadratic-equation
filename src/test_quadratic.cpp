@@ -11,8 +11,8 @@ void TestCompareDouble () {
     printf (  "-----------------------------------------------------------------------------\n");
 
     double tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COMPARE] =
-              { //         a ,           b,   compareResult//
-                    {         1e9,           0,               1},
+                          { //         a ,           b,   compareResult//
+                            {         1e9,           0,               1},
                             {  1e9 - 1e-5,  1e9 - 1e-5,               0},
                             {  1e9 + 1e-5,  1e9 + 1e-5,               0},
                             {         1e9,         1e9,               0},
@@ -25,7 +25,7 @@ void TestCompareDouble () {
 
     const char* str_tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COEF] =
                                    { //           a ,             b//
-                         {"         1e9", "           0"},
+                                     {"         1e9", "           0"},
                                      {"  1e9 - 1e-5", "  1e9 - 1e-5"},
                                      {"  1e9 + 1e-5", "  1e9 + 1e-5"},
                                      {"         1e9", "         1e9"},

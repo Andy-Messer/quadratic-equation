@@ -6,7 +6,7 @@
 
 void TestCompareDouble  ();
 void TestSolveQuadratic ();
-void TestSolver  ();
+void TestSolver         ();
 
 #endif
 

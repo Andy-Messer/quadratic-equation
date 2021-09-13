@@ -21,7 +21,7 @@ enum numberOfRoots {
 int CompareDouble  (double num1, double num2);
 int SolveLinear    (double    a, double b, double *x);
 int SolveQuadratic (double    a, double b, double  c,
-                double  *x1, double *x2);
+                    double  *x1, double *x2);
 
 void FlushInput        ();
 void ReadCoefficients  (double  *a, double *b, double *c);
