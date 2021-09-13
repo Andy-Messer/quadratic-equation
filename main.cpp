@@ -11,184 +11,196 @@
 #include <float.h>
 
 /*! \enum
- *	This enum constains variations of
- *	the number of roots of some equation.
- *
+ * Constain variations of
+ * the number of roots of quadratic equations.
  */
+
 enum numberOfRoots {
-	INF_ROOTS = -1, /**< an infinite number of roots  */
-       	NO_ROOTS, 	/**< the equation has no roots    */
-       	ONE_ROOT,	/**< the equation has one root    */
-       	TWO_ROOTS	/**< the equation has two roots   */
+    INF_ROOTS = -1, /**< infinite roots  */
+    NO_ROOTS,       /**< no       roots  */
+    ONE_ROOT,       /**< one      root   */
+    TWO_ROOTS       /**< two      roots  */
 };
 
-/*! \fn bool IsZero(double a)
- * 	 \brief This funcion check, that double number is a zero.
- * 	 \param [in] a Is a number to check 
+/*! \fn int CompareDouble (double num1, double num2)
+ * Compare num1 and num2.
+ *  \param [in] num1 - first  number to compare
+ *  \param [in] num2 - second number to compare
+ *  \return If num1 >  num2  function will return  1. If num1 <  num2  function will return -1. If num1 == num2  function will return  0.
  */
-bool IsZero(double a) {
-	return fabs(a) < DBL_EPSILON;
-}
+int CompareDouble (double num1, double num2) {
+    if (fabs(num1 - num2) < DBL_EPSILON) { // num1 == num2
+        return 0;
+    } else if (num1 > num2) {
+        return 1;
+    }
 
-/*! \fn	int SolveLinear (double a, double b, double *x)
- * This function solves equations of the form "a * x + b = 0".
- * Where x is unknown variable. The result of the function is the number of roots
+    return -1; // num1 < num2
+}   
+
+/*! \fn int SolveLinear (double a, double b, double *x)
+ * Solve equations of the form "a * x + b = 0".
+ * Where x is unknown variable. The result is the number of roots
  * and the root itself, which is placed in x.
- * 	\param [in] type: double, name: a - is a first argument of equation.
- * 	\param [in] type: double, name: b - is a second argument of equation.
- * 	\param [in, out] type: double*, name: x - is a variable, which we are seaching.
+ *  \param [in] a - is a first argument of equation.
+ *  \param [in] b - is b second argument of equation.
+ *  \param [in, out] x - is a variable, which we are seaching.
+ *  \return number of roots
  */
 int SolveLinear (double a, double b, double *x) {
-	assert (x != NULL);
+    assert (x);
         
-	assert (std::isfinite (a));
-	assert (std::isfinite (b));
+    assert (isfinite (a));
+    assert (isfinite (b));
 
-	if (IsZero(a)) {
+    if (CompareDouble (a, 0) == 0) {
+        if (CompareDouble (b, 0) == 0) {
+                return INF_ROOTS;
+        } else { 
+                return NO_ROOTS;        
+        }
+    } else  if (CompareDouble (b, 0) == 0) {
+        return NO_ROOTS;
+    } else {
+        *x = (-b) / a;
+        return ONE_ROOT;
+    }
 
-		if (IsZero(b))
-		       	return INF_ROOTS;
-	       	else
-		       	return NO_ROOTS;		
-
-	} else 	if (IsZero(b)) {
-
-		return NO_ROOTS;
-
-	} else {
-		
-		*x = (-b) / a;
-		return ONE_ROOT;
-	
-	}
-
-	return 0;
+    return 0;
 }
 
 
 /*! \fn int SolveQuadratic (double a, double b, double c, double* x1, double* x2)
  *
- * This function solves equations of the form "a * x^2 + b * x + c = 0".
- * Where x is unknown variable. The result of the function is the number of roots
+ * Solve equations of the form "a * x^2 + b * x + c = 0".
+ * Where x is unknown variable. The result is the number of roots
  * and the root itself, which is placed in x. Function provides for all possible situations
  * and degenerate cases possible for a quadratic equation
  * 
- * \param [in] type: double, name: a - is a first argument of equation.
- *      \param [in] type: double, name: b - is a second argument of equation.
- *      \param [in] type: double, name: c - is a third argument of eqution.
- *      \param [in, out] type: double*, name: x1 - is one of the variables, which we are seaching.
- *      \param [in, out] type: double*, name: x2 - is other variable, which we are seaching.
+ *  \param [in] a is a first coefficient of equation.
+ *  \param [in] b is a second coefficient of equation.
+ *  \param [in] c is a third coefficient of eqution.
+ *  \param [in, out] x1 is one of the variables, which we are seaching.
+ *  \param [in, out] x2 is other variable, which we are seaching.
+ *  \return number of roots
  */
 int SolveQuadratic (double a, double b, double c, double *x1, double *x2) {
-	assert (x1);
-	assert (x2);
-	assert (x1 != x2);
+    assert (x1);
+    assert (x2);
+    assert (x1 != x2);
 
-	assert (std::isfinite (a));
-	assert (std::isfinite (b));
-	assert (std::isfinite (c));
+    assert (isfinite (a));
+    assert (isfinite (b));
+    assert (isfinite (c));
 
-	if (IsZero(a)) { 
-		
-		int nRoots = SolveLinear(b, c, x1); 
-		*x2 = *x1;
 
-		return nRoots;
-	}
-	
-	if (IsZero(b)) {
-		
-		if (IsZero(c))
-			return NO_ROOTS;
-		else if ((c > DBL_EPSILON && a > DBL_EPSILON) ||
-			 (c < DBL_EPSILON && a < DBL_EPSILON)) {
-			return NO_ROOTS;
-		} else{
-		
-			*x1 = sqrt((-c) / a );
-			*x2 = -(*x1);
-		
-			return TWO_ROOTS;
-		}
+    if (CompareDouble (a, 0) == 0) {
+        int nRoots = SolveLinear (b, c, x1); 
+        *x2 = *x1;
+        return nRoots;
+    }
+    
+    if (CompareDouble (b, 0) == 0) {
+        if (CompareDouble (c, 0) == 0)
+            return NO_ROOTS;
+        else if (CompareDouble (c, 0) == CompareDouble (a, 0)) {
+            return NO_ROOTS;
+        } else{
+            *x1 = sqrt ((-c) / a );
+            *x2 = -(*x1);
+            return TWO_ROOTS;
+        }
+    } else {
+        double d = (b * b) - (4 * a * c);   
+        int signD = CompareDouble (d, 0);
 
-	} else if (IsZero(c)) {
-		
-		*x2 = 0;
-		int nRoots = SolveLinear(a, b, x1);
-		
-		if (nRoots == ONE_ROOT)
-		       	return TWO_ROOTS;
-	       	else if (nRoots == INF_ROOTS)
-		       	return INF_ROOTS;
-		else
-			return NO_ROOTS;
-	} else {
-		
-		double d = (b * b) - (4 * a * c);
-		
-		if (d < -DBL_EPSILON)
-			return NO_ROOTS;
-		else if (IsZero(d)) {
-		
-			*x1 = (-b) / (2 * a);
-			*x2 = *x1;
+        if (signD > 0) {
+            double sqrtD = sqrt (d);
+            *x1 = (-b - sqrtD) / (2 * a);
+            *x2 = (-b + sqrtD) / (2 * a);
+            
+            return TWO_ROOTS;
+        } else if (signD == 0) {
+            *x1 = (-b) / (2 * a);
+            *x2 = *x1;
+            
+            return ONE_ROOT;
+        } else if (signD < 0) {
+            return NO_ROOTS;
+        }
+    }
 
-			return ONE_ROOT;
-		} else if (d > DBL_EPSILON) {
-		
-			double sqrt_d = sqrt(d);
-			*x1 = (-b - sqrt_d) / (2 * a); 
-			*x2 = (-b + sqrt_d) / (2 * a);
-		
-			return TWO_ROOTS;
-		}
-	}
-
-	return 0;
+    return 0;
 }
 
-int main() {
-	
-	printf ("# Square equation solver\n"
-		"# (c) Krot, 2021\n\n");
+/*! \fn void FlushInput()
+ *  \brief clear the input buffer
+ */
+void FlushInput () {
+    while (getchar () != '\n');
+}
 
-	printf ("Enter a, b, c: ");
+/*! \fn void ReadCoefficients (double *a,double *b, double *c)
+ *  \brief Read coefficients of quadratic equations
+ *  \param [in, out] a is a first coefficient of equation.
+ *  \param [in, out] b is a second coefficient of equation.
+ *  \param [in, out] c is a third coefficient of eqution.
+ */
+void ReadCoefficients (double *a, double *b, double *c) {
+    while (scanf ("%lg %lg %lg", a, b, c) != 3) {
+        printf ("Wrong input, please try again: ");
+        FlushInput();
+    }
+}
 
+/*! \fn void WriteAnswer (int nRoots, double x1, double x2)
+ *  \brief Outputs the answer of quadratic equations
+ *  \param [in] nRoots number of roots
+ *  \param [in] x1 first  root
+ *  \param [in] x2 second root
+ */
+void WriteAnswer (int nRoots, double x1, double x2) {
+    switch (nRoots) {
+        case NO_ROOTS:
+            printf ("No roots\n");
+            break;
+            
+        case ONE_ROOT: 
+            printf ("x = %lg\n", x1);
+            break;
 
-	double a = 0;
-	double b = 0;
-	double c = 0;
+        case TWO_ROOTS:
+            printf ("x1 = %lg, x2 = %lg\n", x1, x2);
+            break;
 
-	while (scanf("%lg %lg %lg", &a, &b, &c) != 3) {
-		printf("Wrong input, please try again: ");
-		while(getchar()!='\n');
-	}
+        case INF_ROOTS:
+            printf ("Any number\n");
+            break;
+        
+        default:
+            printf ("main(): ERROR: nRooTs = %d\n", nRoots);
+    }
+}
 
-	double x1 = 0;
-	double x2 = 0;
-	int nRoots = SolveQuadratic(a, b, c, &x1, &x2);
+int main () {
+    
+    printf ("# Square equation solver\n"
+            "# (c) Krot, 2021\n\n");
 
-	switch(nRoots){
-		case NO_ROOTS:
-			printf ("No roots\n");
-			break;
-			
-		case ONE_ROOT: 
-			printf ("x = %lg\n", x1);
-			break;
+    printf ("Enter a, b, c: ");
 
-		case TWO_ROOTS:
-			printf ("x1 = %lg, x2 = %lg\n", x1, x2);
-			break;
+    double a = 0;
+    double b = 0;
+    double c = 0;
 
-		case INF_ROOTS:
-			printf ("Any number\n");
-			break;
-		
-		default:
-			printf ("main(): ERROR: nRooTs = %d\n", nRoots);
-	}
+    ReadCoefficients(&a, &b, &c);    
 
-	return 0;
+    double x1 = 0;
+    double x2 = 0;
+    int nRoots = SolveQuadratic (a, b, c, &x1, &x2);
+
+    WriteAnswer(nRoots, x1, x2);
+
+    return 0;
 }
 
