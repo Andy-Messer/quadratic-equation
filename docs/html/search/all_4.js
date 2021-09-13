@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['solvelinear_6',['SolveLinear',['../main_8cpp.html#ac1ba2f9d576c716484869414f91b7151',1,'main.cpp']]],
-  ['solvequadratic_7',['SolveQuadratic',['../main_8cpp.html#ac1dcbe4eb26d3fc8d42250855dbf56bb',1,'main.cpp']]]
+  ['one_5froot_5',['ONE_ROOT',['../solve__quadratic_8h.html#ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf',1,'solve_quadratic.h']]]
 ];

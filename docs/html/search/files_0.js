@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp_9',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['solve_5fquadratic_2eh_12',['solve_quadratic.h',['../solve__quadratic_8h.html',1,'']]]
 ];

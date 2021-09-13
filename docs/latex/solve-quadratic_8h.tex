@@ -1,0 +1,177 @@
+\hypertarget{solve-quadratic_8h}{}\doxysection{solve-\/quadratic.h File Reference}
+\label{solve-quadratic_8h}\index{solve-\/quadratic.h@{solve-\/quadratic.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$float.\+h$>$}\newline
+Include dependency graph for solve-\/quadratic.h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{solve-quadratic_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{solve-quadratic_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375}{number\+Of\+Roots}} \{ \mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}{I\+N\+F\+\_\+\+R\+O\+O\+TS}} = -\/1, 
+\mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}{N\+O\+\_\+\+R\+O\+O\+TS}}, 
+\mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}{O\+N\+E\+\_\+\+R\+O\+OT}}, 
+\mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}{T\+W\+O\+\_\+\+R\+O\+O\+TS}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{solve-quadratic_8h_aede179b349fa06d18c38a9e03e5faffd}{Compare\+Double}} (double num1, double num2)
+\item 
+int \mbox{\hyperlink{solve-quadratic_8h_ac1ba2f9d576c716484869414f91b7151}{Solve\+Linear}} (double a, double b, double $\ast$x)
+\item 
+int \mbox{\hyperlink{solve-quadratic_8h_ac1dcbe4eb26d3fc8d42250855dbf56bb}{Solve\+Quadratic}} (double a, double b, double c, double $\ast$x1, double $\ast$x2)
+\item 
+\mbox{\Hypertarget{solve-quadratic_8h_af760698300b1d9d04708ca26bafb52e6}\label{solve-quadratic_8h_af760698300b1d9d04708ca26bafb52e6}} 
+void \mbox{\hyperlink{solve-quadratic_8h_af760698300b1d9d04708ca26bafb52e6}{Flush\+Input}} ()
+\begin{DoxyCompactList}\small\item\em clear the input buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{solve-quadratic_8h_ab28332cdba1ea8ec2f7948bae91fc1ca}{Read\+Coefficients}} (double $\ast$a, double $\ast$b, double $\ast$c)
+\begin{DoxyCompactList}\small\item\em Read coefficients of quadratic equations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{solve-quadratic_8h_a79b0f9a6d69924b83be9bc234993aafc}{Write\+Answer}} (int n\+Roots, double x1, double x2)
+\begin{DoxyCompactList}\small\item\em Outputs the answer of quadratic equations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375}\label{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!numberOfRoots@{numberOfRoots}}
+\index{numberOfRoots@{numberOfRoots}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{numberOfRoots}{numberOfRoots}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375}{number\+Of\+Roots}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INF\_ROOTS@{INF\_ROOTS}!solve-\/quadratic.h@{solve-\/quadratic.h}}\index{solve-\/quadratic.h@{solve-\/quadratic.h}!INF\_ROOTS@{INF\_ROOTS}}}\mbox{\Hypertarget{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}\label{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a5a79e9e49077da58fe5d46a98f0b5e36}} 
+I\+N\+F\+\_\+\+R\+O\+O\+TS&infinite roots ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ROOTS@{NO\_ROOTS}!solve-\/quadratic.h@{solve-\/quadratic.h}}\index{solve-\/quadratic.h@{solve-\/quadratic.h}!NO\_ROOTS@{NO\_ROOTS}}}\mbox{\Hypertarget{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}\label{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c}} 
+N\+O\+\_\+\+R\+O\+O\+TS&no roots ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONE\_ROOT@{ONE\_ROOT}!solve-\/quadratic.h@{solve-\/quadratic.h}}\index{solve-\/quadratic.h@{solve-\/quadratic.h}!ONE\_ROOT@{ONE\_ROOT}}}\mbox{\Hypertarget{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}\label{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf}} 
+O\+N\+E\+\_\+\+R\+O\+OT&one root ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TWO\_ROOTS@{TWO\_ROOTS}!solve-\/quadratic.h@{solve-\/quadratic.h}}\index{solve-\/quadratic.h@{solve-\/quadratic.h}!TWO\_ROOTS@{TWO\_ROOTS}}}\mbox{\Hypertarget{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}\label{solve-quadratic_8h_ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81}} 
+T\+W\+O\+\_\+\+R\+O\+O\+TS&two roots ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{solve-quadratic_8h_aede179b349fa06d18c38a9e03e5faffd}\label{solve-quadratic_8h_aede179b349fa06d18c38a9e03e5faffd}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!CompareDouble@{CompareDouble}}
+\index{CompareDouble@{CompareDouble}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{CompareDouble()}{CompareDouble()}}
+{\footnotesize\ttfamily int Compare\+Double (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+Compare num1 and num2. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num1} & -\/ first number to compare \\
+\hline
+\mbox{\texttt{ in}}  & {\em num2} & -\/ second number to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If num1 $>$ num2 function will return 1. If num1 $<$ num2 function will return -\/1. If num1 == num2 function will return 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve-quadratic_8h_ab28332cdba1ea8ec2f7948bae91fc1ca}\label{solve-quadratic_8h_ab28332cdba1ea8ec2f7948bae91fc1ca}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!ReadCoefficients@{ReadCoefficients}}
+\index{ReadCoefficients@{ReadCoefficients}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{ReadCoefficients()}{ReadCoefficients()}}
+{\footnotesize\ttfamily void Read\+Coefficients (\begin{DoxyParamCaption}\item[{double $\ast$}]{a,  }\item[{double $\ast$}]{b,  }\item[{double $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Read coefficients of quadratic equations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em a} & is a first coefficient of equation. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em b} & is a second coefficient of equation. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em c} & is a third coefficient of eqution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{solve-quadratic_8h_ac1ba2f9d576c716484869414f91b7151}\label{solve-quadratic_8h_ac1ba2f9d576c716484869414f91b7151}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!SolveLinear@{SolveLinear}}
+\index{SolveLinear@{SolveLinear}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{SolveLinear()}{SolveLinear()}}
+{\footnotesize\ttfamily int Solve\+Linear (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double $\ast$}]{x }\end{DoxyParamCaption})}
+
+Solve equations of the form \char`\"{}a $\ast$ x + b = 0\char`\"{}. Where x is unknown variable. The result is the number of roots and the root itself, which is placed in x. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & -\/ is a first argument of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & -\/ is b second argument of equation. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em x} & -\/ is a variable, which we are seaching. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of roots 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve-quadratic_8h_ac1dcbe4eb26d3fc8d42250855dbf56bb}\label{solve-quadratic_8h_ac1dcbe4eb26d3fc8d42250855dbf56bb}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!SolveQuadratic@{SolveQuadratic}}
+\index{SolveQuadratic@{SolveQuadratic}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{SolveQuadratic()}{SolveQuadratic()}}
+{\footnotesize\ttfamily int Solve\+Quadratic (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
+
+Solve equations of the form \char`\"{}a $\ast$ x$^\wedge$2 + b $\ast$ x + c = 0\char`\"{}. Where x is unknown variable. The result is the number of roots and the root itself, which is placed in x. Function provides for all possible situations and degenerate cases possible for a quadratic equation
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & is a first coefficient of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & is a second coefficient of equation. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & is a third coefficient of eqution. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em x1} & is one of the variables, which we are seaching. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em x2} & is other variable, which we are seaching. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of roots 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve-quadratic_8h_a79b0f9a6d69924b83be9bc234993aafc}\label{solve-quadratic_8h_a79b0f9a6d69924b83be9bc234993aafc}} 
+\index{solve-\/quadratic.h@{solve-\/quadratic.h}!WriteAnswer@{WriteAnswer}}
+\index{WriteAnswer@{WriteAnswer}!solve-\/quadratic.h@{solve-\/quadratic.h}}
+\doxysubsubsection{\texorpdfstring{WriteAnswer()}{WriteAnswer()}}
+{\footnotesize\ttfamily void Write\+Answer (\begin{DoxyParamCaption}\item[{int}]{n\+Roots,  }\item[{double}]{x1,  }\item[{double}]{x2 }\end{DoxyParamCaption})}
+
+
+
+Outputs the answer of quadratic equations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n\+Roots} & number of roots \\
+\hline
+\mbox{\texttt{ in}}  & {\em x1} & first root \\
+\hline
+\mbox{\texttt{ in}}  & {\em x2} & second root \\
+\hline
+\end{DoxyParams}

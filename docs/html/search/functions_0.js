@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iszero_10',['IsZero',['../main_8cpp.html#a1ad918ef2fe7a690fb3b42f44c7be1f4',1,'main.cpp']]]
+  ['comparedouble_13',['CompareDouble',['../solve__quadratic_8h.html#aede179b349fa06d18c38a9e03e5faffd',1,'solve_quadratic.cpp']]]
 ];

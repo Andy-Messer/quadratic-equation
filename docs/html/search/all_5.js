@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['two_5froots_8',['TWO_ROOTS',['../main_8cpp.html#ab4611c2fee0b205012e761712cdc6375a876622d3c0b008da13a3685c64714e81',1,'main.cpp']]]
+  ['readcoefficients_6',['ReadCoefficients',['../solve__quadratic_8h.html#ab28332cdba1ea8ec2f7948bae91fc1ca',1,'solve_quadratic.cpp']]]
 ];

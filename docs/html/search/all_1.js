@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['flushinput_1',['FlushInput',['../solve__quadratic_8h.html#af760698300b1d9d04708ca26bafb52e6',1,'solve_quadratic.cpp']]]
 ];
