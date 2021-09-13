@@ -11,8 +11,7 @@
 #include <float.h>
 
 /*! \enum
- * Constain variations of
- * the number of roots of quadratic equations.
+ * Possible number of roots of quadratic equations.
  */
 
 enum numberOfRoots {
@@ -26,7 +25,9 @@ enum numberOfRoots {
  * Compare num1 and num2.
  *  \param [in] num1 - first  number to compare
  *  \param [in] num2 - second number to compare
- *  \return If num1 >  num2  function will return  1. If num1 <  num2  function will return -1. If num1 == num2  function will return  0.
+ *  \return If num1 >  num2  function will return  1.
+ *          If num1 <  num2  function will return -1.
+ *          If num1 == num2  function will return  0.
  */
 int CompareDouble (double num1, double num2) {
     if (fabs(num1 - num2) < DBL_EPSILON) { // num1 == num2
@@ -93,7 +94,6 @@ int SolveQuadratic (double a, double b, double c, double *x1, double *x2) {
     assert (isfinite (b));
     assert (isfinite (c));
 
-
     if (CompareDouble (a, 0) == 0) {
         int nRoots = SolveLinear (b, c, x1); 
         *x2 = *x1;
@@ -147,6 +147,10 @@ void FlushInput () {
  *  \param [in, out] c is a third coefficient of eqution.
  */
 void ReadCoefficients (double *a, double *b, double *c) {
+    assert (a);
+    assert (b);
+    assert (c);
+    
     while (scanf ("%lg %lg %lg", a, b, c) != 3) {
         printf ("Wrong input, please try again: ");
         FlushInput();
@@ -160,6 +164,9 @@ void ReadCoefficients (double *a, double *b, double *c) {
  *  \param [in] x2 second root
  */
 void WriteAnswer (int nRoots, double x1, double x2) {
+    assert (isfinite (x1));
+    assert (isfinite (x2));
+    
     switch (nRoots) {
         case NO_ROOTS:
             printf ("No roots\n");
@@ -183,7 +190,6 @@ void WriteAnswer (int nRoots, double x1, double x2) {
 }
 
 int main () {
-    
     printf ("# Square equation solver\n"
             "# (c) Krot, 2021\n\n");
 
