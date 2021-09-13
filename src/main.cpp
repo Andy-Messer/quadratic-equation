@@ -15,7 +15,7 @@ void AnalyzeStartupArguments (int argc, char *argv[]){
             flagTestSolver = 1;
             break;
         }
-        argcCopy--;
+        --argcCopy;
     }
 
     if (flagTestSolver) {

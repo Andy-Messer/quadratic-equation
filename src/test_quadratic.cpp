@@ -61,7 +61,7 @@ void TestSolveQuadratic () {
     
     double tests[NUM_OF_TESTS_FOR_QUAD_SOLVER][NUM_OF_ARGS_AND_COEF_FOR_QUAD_SOLVER] =
                           { // a   b   c  x1  x2 nRoots //
-                    {  0,  1, -2,  2,  2, 1},
+                            {  0,  1, -2,  2,  2, 1},
                             {  1,  0,  0,  0,  0, 1},
                             {  1,  0, -1, -1,  1, 2},
                             {  1,  0,  1,  0,  0, NO_ROOTS},
