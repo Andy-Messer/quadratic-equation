@@ -6,11 +6,10 @@ This programm solves quadratic equations in real numbers.
 
 ## Example
 ### Solving the equation
-> # Square equation solver
-> # (c) Krot, 2021
->
-> Enter a, b, c: 10 23 2
-> x1 = -2.20948, x2 = -0.090519
+Square equation solver
+(c) Krot, 2021
+Enter a, b, c: 10 23 2
+x1 = -2.20948, x2 = -0.090519
 
 ### Unit tests
 We ask the user whether to test the program.
