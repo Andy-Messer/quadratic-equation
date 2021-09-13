@@ -1,22 +1,31 @@
-#include "solve_quadratic.h"
+#include "test_quadratic.h"
+
+const int NUM_OF_TESTS_FOR_COMPARE = 10;
+const int NUM_OF_ARGS_AND_COEF_FOR_COMPARE = 3;
+const int NUM_OF_TESTS_FOR_QUAD_SOLVER = 13;
+const int NUM_OF_ARGS_AND_COEF_FOR_QUAD_SOLVER = 6;
 
 void TestCompareDouble () {
     printf ("\n-----------------------------------------------------------------------------\n");
     printf (  "-----------------Now-start-Unit-Testing-of-compare-of-doubles----------------\n");
     printf (  "-----------------------------------------------------------------------------\n");
 
-    double tests[10][3] = { {         1e9,           0,  1},
-                            {  1e9 - 1e-5,  1e9 - 1e-5,  0},
-                            {  1e9 + 1e-5,  1e9 + 1e-5,  0},
-                            {         1e9,         1e9,  0},
-                            {           0,         1e9, -1},
-                            {        -1e9,           0, -1},
-                            { -1e9 + 1e-5, -1e9 + 1e-5,  0},
-                            { -1e9 - 1e-5, -1e9 - 1e-5,  0},
-                            {        -1e9,        -1e9,  0},
-                            {           0,        -1e9,  1} };
+    double tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COMPARE] =
+              { //         a ,           b,   compareResult//
+                    {         1e9,           0,               1},
+                            {  1e9 - 1e-5,  1e9 - 1e-5,               0},
+                            {  1e9 + 1e-5,  1e9 + 1e-5,               0},
+                            {         1e9,         1e9,               0},
+                            {           0,         1e9,              -1},
+                            {        -1e9,           0,              -1},
+                            { -1e9 + 1e-5, -1e9 + 1e-5,               0},
+                            { -1e9 - 1e-5, -1e9 - 1e-5,               0},
+                            {        -1e9,        -1e9,               0},
+                            {           0,        -1e9,               1} };
 
-    const char* str_tests[10][3] = { {"         1e9", "           0"},
+    const char* str_tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COEF] =
+                                   { //           a ,             b//
+                         {"         1e9", "           0"},
                                      {"  1e9 - 1e-5", "  1e9 - 1e-5"},
                                      {"  1e9 + 1e-5", "  1e9 + 1e-5"},
                                      {"         1e9", "         1e9"},
@@ -28,7 +37,7 @@ void TestCompareDouble () {
                                      {"           0", "        -1e9"} };
 
      int resultOfCompare = 0;
-     for (int i = 0; i < 10; ++i) {
+     for (int i = 0; i < NUM_OF_TESTS_FOR_COMPARE; ++i) {
          resultOfCompare = CompareDouble (tests[i][0], tests[i][1]);
 
          printf ("\nTest №%d with numbers: %s, %s returned %d\n", i,
@@ -50,7 +59,9 @@ void TestSolveQuadratic () {
     printf (  "---------Now-start-Unit-Testing-of-solve-quadratic-and-solve-linear----------\n");
     printf (  "-----------------------------------------------------------------------------\n");
     
-    double tests[13][6] = { {  0,  1, -2,  2,  2, 1},
+    double tests[NUM_OF_TESTS_FOR_QUAD_SOLVER][NUM_OF_ARGS_AND_COEF_FOR_QUAD_SOLVER] =
+                          { // a   b   c  x1  x2 nRoots //
+                    {  0,  1, -2,  2,  2, 1},
                             {  1,  0,  0,  0,  0, 1},
                             {  1,  0, -1, -1,  1, 2},
                             {  1,  0,  1,  0,  0, NO_ROOTS},
@@ -68,7 +79,7 @@ void TestSolveQuadratic () {
      double x1;
      double x2;
 
-     for (int i = 0; i < 13; ++i) {
+     for (int i = 0; i < NUM_OF_TESTS_FOR_QUAD_SOLVER; ++i) {
          resultOfSolver = SolveQuadratic (tests[i][0], tests[i][1], tests[i][2], &x1, &x2);
 
          printf ("\nTest №%d, equation: %lg * x^2 + %lg * x + %lg = 0\n", i, tests[i][0], tests[i][1], tests[i][2]);
@@ -116,4 +127,15 @@ void TestSolveQuadratic () {
      }
 
 }
+
+//--------------------------------------------------------------------------//
+/*! \fn void TestSolver
+ *  \brief check the program on unit tests
+ */
+//--------------------------------------------------------------------------//
+void TestSolver () {
+    TestCompareDouble ();
+    TestSolveQuadratic ();
+}
+//--------------------------------------------------------------------------//
 

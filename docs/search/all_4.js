@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['one_5froot_5',['ONE_ROOT',['../solve__quadratic_8h.html#ab4611c2fee0b205012e761712cdc6375a6700c0f6efd23571cb22aefd2510b1cf',1,'solve_quadratic.h']]]
+  ['writeanswer_6',['WriteAnswer',['../solve__quadratic_8cpp.html#a79b0f9a6d69924b83be9bc234993aafc',1,'solve_quadratic.cpp']]]
 ];

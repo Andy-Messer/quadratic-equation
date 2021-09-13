@@ -12,11 +12,7 @@ Enter a, b, c: 10 23 2\
 x1 = -2.20948, x2 = -0.090519
 
 ### Unit tests
-We ask the user whether to test the program.
-
->Do you want to Test your program? (Y)(Other symbol)
-
-If you enter 'Y'. All functions will be tested. These tests help to understand that all functions work correctly.
+You can add --test to arguments to start Unite testing
 
 # Source code docs
 [doxygen documentation](https://andy-messer.github.io/quadratic-equation/)

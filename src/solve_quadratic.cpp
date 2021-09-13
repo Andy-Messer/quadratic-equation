@@ -1,12 +1,11 @@
 /*!
  *
  * \author Andrey Krotov
- * \file solve_quadratic.h
+ * \file solve_quadratic.cpp
  *
  */
 
 #include "solve_quadratic.h"
-#include "test_quadratic.cpp"
 
 //--------------------------------------------------------------------------//
 /*! \fn int CompareDouble (double num1, double num2)
@@ -92,17 +91,16 @@ int SolveQuadratic (double a, double b, double c, double *x1, double *x2) {
         int nRoots = SolveLinear (b, c, x1); 
         *x2 = *x1;
         
-	return nRoots;
+    return nRoots;
     }
     
     if (CompareDouble (b, 0) == 0) {
         if (CompareDouble (c, 0) == 0) {
-            *x1 = *x2 = 0;
-	    
-	    return ONE_ROOT;
+            *x1 = (*x2 = 0);
+        
+        return ONE_ROOT;
         } else if (CompareDouble (c, 0) == CompareDouble (a, 0)) {
-            
-	    return NO_ROOTS;
+        return NO_ROOTS;
         } else{
             *x1 = sqrt ((-c) / a );
             *x2 = -(*x1);
@@ -198,45 +196,3 @@ void WriteAnswer (int nRoots, double x1, double x2) {
 }
 //--------------------------------------------------------------------------//
 
-//--------------------------------------------------------------------------//
-/*! \fn void EnterToTestSolver
- *  \brief Invite you to check the program on unit tests
- */
-//--------------------------------------------------------------------------//
-void EnterToTestSolver () {
-    printf ("Do you want to Test your program? (Y)(Other symbol)\n");
-
-    while (getchar () != '\n');
-
-    char solveOfUser = getchar ();
-
-    if (solveOfUser == 'Y') {
-        TestCompareDouble ();
-        TestSolveQuadratic ();
-    }
-}
-//--------------------------------------------------------------------------//
-
-//--------------------------------------------------------------------------//
-int main () {
-    printf ("# Square equation solver\n"
-            "# (c) Krot, 2021\n\n");
-
-    printf ("Enter a, b, c: ");
-    double a = 0;
-    double b = 0;
-    double c = 0;
-
-    ReadCoefficients (&a, &b, &c);    
-
-    double x1 = 0;
-    double x2 = 0;
-    int nRoots = SolveQuadratic (a, b, c, &x1, &x2);
-
-    WriteAnswer (nRoots, x1, x2);
-
-    EnterToTestSolver ();
-
-    return 0;
-}
-//---------------------------------------------------------------------------//

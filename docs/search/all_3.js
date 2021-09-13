@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['no_5froots_3',['NO_ROOTS',['../solve__quadratic_8h.html#ab4611c2fee0b205012e761712cdc6375ab9a321da349ac1355b717745736ad90c',1,'solve_quadratic.h']]],
-  ['numberofroots_4',['numberOfRoots',['../solve__quadratic_8h.html#ab4611c2fee0b205012e761712cdc6375',1,'solve_quadratic.h']]]
+  ['solve_5fquadratic_2ecpp_3',['solve_quadratic.cpp',['../solve__quadratic_8cpp.html',1,'']]],
+  ['solvelinear_4',['SolveLinear',['../solve__quadratic_8cpp.html#ac1ba2f9d576c716484869414f91b7151',1,'solve_quadratic.cpp']]],
+  ['solvequadratic_5',['SolveQuadratic',['../solve__quadratic_8cpp.html#ac1dcbe4eb26d3fc8d42250855dbf56bb',1,'solve_quadratic.cpp']]]
 ];
