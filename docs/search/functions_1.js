@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['flushinput_9',['FlushInput',['../solve__quadratic_8cpp.html#af760698300b1d9d04708ca26bafb52e6',1,'solve_quadratic.cpp']]]
+  ['solvelinear_6',['SolveLinear',['../solve__quadratic_8cpp.html#ac1ba2f9d576c716484869414f91b7151',1,'solve_quadratic.cpp']]],
+  ['solvequadratic_7',['SolveQuadratic',['../solve__quadratic_8cpp.html#ac1dcbe4eb26d3fc8d42250855dbf56bb',1,'solve_quadratic.cpp']]]
 ];

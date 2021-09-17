@@ -23,8 +23,5 @@ int SolveLinear    (double    a, double b, double *x);
 int SolveQuadratic (double    a, double b, double  c,
                     double  *x1, double *x2);
 
-void FlushInput        ();
-void ReadCoefficients  (double  *a, double *b, double *c);
-void WriteAnswer       (int nRoots, double x1, double x2);
 #endif
 

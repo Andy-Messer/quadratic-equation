@@ -5,12 +5,16 @@ const int NUM_OF_ARGS_AND_COEF_FOR_COMPARE = 3;
 const int NUM_OF_TESTS_FOR_QUAD_SOLVER = 13;
 const int NUM_OF_ARGS_AND_COEF_FOR_QUAD_SOLVER = 6;
 
+bool CheckNumberOfRoots (int firstEQ, int secondEQ, int NumberOfRoots){
+	return (firstEQ == NumberOfRoots) && (secondEQ == NumberOfRoots);
+}
+
 void TestCompareDouble () {
     printf ("\n-----------------------------------------------------------------------------\n");
     printf (  "-----------------Now-start-Unit-Testing-of-compare-of-doubles----------------\n");
     printf (  "-----------------------------------------------------------------------------\n");
 
-    double tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COMPARE] =
+    double tests[NUM_OF_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COMPARE] =
                           { //         a ,           b,   compareResult//
                             {         1e9,           0,               1},
                             {  1e9 - 1e-5,  1e9 - 1e-5,               0},
@@ -23,7 +27,7 @@ void TestCompareDouble () {
                             {        -1e9,        -1e9,               0},
                             {           0,        -1e9,               1} };
 
-    const char* str_tests[NUM_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COEF] =
+    const char* str_tests[NUM_OF_TESTS_FOR_COMPARE][NUM_OF_ARGS_AND_COEF_FOR_COMPARE] =
                                    { //           a ,             b//
                                      {"         1e9", "           0"},
                                      {"  1e9 - 1e-5", "  1e9 - 1e-5"},
@@ -52,6 +56,32 @@ void TestCompareDouble () {
          printf ("\n-----------------------------------------------------------------------------\n");
      }
 
+}
+
+void WriteAnswerTests (int nRoots, double x1, double x2) {
+    assert (isfinite (x1));
+    assert (isfinite (x2));
+
+    switch (nRoots) {
+        case NO_ROOTS:
+            printf ("No roots\n");
+            break;
+
+        case ONE_ROOT:
+            printf ("x = %lg\n", x1);
+            break;
+
+        case TWO_ROOTS:
+            printf ("x1 = %lg, x2 = %lg\n", x1, x2);
+            break;
+
+        case INF_ROOTS:
+            printf ("Any number\n");
+            break;
+
+        default:
+            printf ("main(): ERROR: nRooTs = %d\n", nRoots);
+    }
 }
 
 void TestSolveQuadratic () {
@@ -83,45 +113,23 @@ void TestSolveQuadratic () {
          resultOfSolver = SolveQuadratic (tests[i][0], tests[i][1], tests[i][2], &x1, &x2);
 
          printf ("\nTest №%d, equation: %lg * x^2 + %lg * x + %lg = 0\n", i, tests[i][0], tests[i][1], tests[i][2]);
-         if (resultOfSolver == NO_ROOTS) {
-                printf ("The answer \"no roots\"\n");
-         } else if (resultOfSolver == INF_ROOTS) {
-                printf ("The answer \"any number\"\n");
-         } else if (tests[i][6] == ONE_ROOT) {
-                printf ("The answer: 1 - num of roots, %lg - root\n", x1);
-         } else if (tests[i][6] == TWO_ROOTS) {
-                printf ("The answer: 2 - number of roots, %lg - first root, %lg - second root\n", x1, x2);
-         }
-         if (tests[i][5] == NO_ROOTS) {
-                printf ("The correct answer was \"no roots\"\n");
-                if (resultOfSolver == NO_ROOTS) {
-                    printf ("Passed.\n");
-                } else {
-                    printf ("Wrong answer!\n");
-                }
-         } else if (tests[i][5] == INF_ROOTS) {
-                printf("The correct answer was \"any number\"\n");
-                if (resultOfSolver == INF_ROOTS) {
-                        printf ("Passed.\n");
-                } else {
-                        printf ("Wrong answer!\n");
-                }
-         } else if (tests[i][5] == ONE_ROOT) {
-                printf ("The correct answer was: 1 - num of roots, %lg - root\n", tests[i][4]);
-                if (resultOfSolver == tests[i][5] && x1 == x2 && x1 == tests[i][3]) {
-                         printf ("Passed.\n");
-                } else {
-                        printf ("Wrong answer!\n");
-                }
-         } else if (tests[i][5] == TWO_ROOTS) {
-                printf ("The correct answer was: 2 - number of roots, %lg - first root, %lg - second root\n", tests[i][3], tests[i][4]);
-                if (resultOfSolver == tests[i][5] && x1 != x2 && ((x1 == tests[i][3] && x2 == tests[i][4])||
-                                                                   (x1 == tests[i][4] && x2 == tests[i][3]))) {
-                         printf ("Passed.\n");
-                } else {
-                        printf ("Wrong answer!\n");
-                }
+         WriteAnswerTests (resultOfSolver, x1, x2);
+	 printf ("\nCorrect Answer:\n");
+	 WriteAnswerTests (tests[i][5], tests[i][3], tests[i][4]);
+	 
+	 if (  CheckNumberOfRoots (tests[i][5], resultOfSolver, NO_ROOTS ) ||
+	       CheckNumberOfRoots (tests[i][5], resultOfSolver, INF_ROOTS) ||
 
+	      (CheckNumberOfRoots (tests[i][5], resultOfSolver, ONE_ROOT )
+	                                 && x1 == x2 && x1 == tests[i][3]) ||
+	    
+	      (CheckNumberOfRoots (tests[i][5], resultOfSolver, TWO_ROOTS)
+	          && x1 != x2 && ((x1 == tests[i][3] && x2 == tests[i][4]) ||
+	                          (x1 == tests[i][4] && x2 == tests[i][3]))))
+	 {
+             printf ("Passed.\n");
+         } else {
+             printf ("Wrong answer!\n");
          }
          printf ("\n-----------------------------------------------------------------------------\n");
      }

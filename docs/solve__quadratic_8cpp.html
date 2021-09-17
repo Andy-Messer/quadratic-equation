@@ -90,16 +90,6 @@ Functions</h2></td></tr>
 <tr class="separator:ac1ba2f9d576c716484869414f91b7151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1dcbe4eb26d3fc8d42250855dbf56bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__quadratic_8cpp.html#ac1dcbe4eb26d3fc8d42250855dbf56bb">SolveQuadratic</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
 <tr class="separator:ac1dcbe4eb26d3fc8d42250855dbf56bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af760698300b1d9d04708ca26bafb52e6"><td class="memItemLeft" align="right" valign="top"><a id="af760698300b1d9d04708ca26bafb52e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__quadratic_8cpp.html#af760698300b1d9d04708ca26bafb52e6">FlushInput</a> ()</td></tr>
-<tr class="memdesc:af760698300b1d9d04708ca26bafb52e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the input buffer <br /></td></tr>
-<tr class="separator:af760698300b1d9d04708ca26bafb52e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab28332cdba1ea8ec2f7948bae91fc1ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__quadratic_8cpp.html#ab28332cdba1ea8ec2f7948bae91fc1ca">ReadCoefficients</a> (double *a, double *b, double *c)</td></tr>
-<tr class="memdesc:ab28332cdba1ea8ec2f7948bae91fc1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read coefficients of quadratic equations.  <a href="solve__quadratic_8cpp.html#ab28332cdba1ea8ec2f7948bae91fc1ca">More...</a><br /></td></tr>
-<tr class="separator:ab28332cdba1ea8ec2f7948bae91fc1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b0f9a6d69924b83be9bc234993aafc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve__quadratic_8cpp.html#a79b0f9a6d69924b83be9bc234993aafc">WriteAnswer</a> (int nRoots, double x1, double x2)</td></tr>
-<tr class="memdesc:a79b0f9a6d69924b83be9bc234993aafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the answer of quadratic equations.  <a href="solve__quadratic_8cpp.html#a79b0f9a6d69924b83be9bc234993aafc">More...</a><br /></td></tr>
-<tr class="separator:a79b0f9a6d69924b83be9bc234993aafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Andrey Krotov </dd></dl>
@@ -137,50 +127,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solv
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If num1 &gt; num2 function will return 1. If num1 &lt; num2 function will return -1. If num1 == num2 function will return 0. </dd></dl>
-
-</div>
-</div>
-<a id="ab28332cdba1ea8ec2f7948bae91fc1ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab28332cdba1ea8ec2f7948bae91fc1ca">&#9670;&nbsp;</a></span>ReadCoefficients()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ReadCoefficients </td>
-          <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Read coefficients of quadratic equations. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">a</td><td>is a first coefficient of equation. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">b</td><td>is a second coefficient of equation. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">c</td><td>is a third coefficient of eqution. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -282,50 +228,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solv
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of roots </dd></dl>
-
-</div>
-</div>
-<a id="a79b0f9a6d69924b83be9bc234993aafc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b0f9a6d69924b83be9bc234993aafc">&#9670;&nbsp;</a></span>WriteAnswer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WriteAnswer </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nRoots</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Outputs the answer of quadratic equations. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">nRoots</td><td>number of roots </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x1</td><td>first root </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">x2</td><td>second root </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
