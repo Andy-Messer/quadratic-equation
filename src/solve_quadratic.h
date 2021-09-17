@@ -6,7 +6,6 @@
 #include <math.h>
 #include <float.h>
 
-
 /*! \enum
  * Possible number of roots of quadratic equations.
  */
@@ -24,4 +23,3 @@ int SolveQuadratic (double    a, double b, double  c,
                     double  *x1, double *x2);
 
 #endif
-

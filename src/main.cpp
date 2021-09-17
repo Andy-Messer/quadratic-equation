@@ -68,9 +68,6 @@ void WriteAnswer (int nRoots, double x1, double x2) {
             printf ("main(): ERROR: nRooTs = %d\n", nRoots);
     }
 }
-//--------------------------------------------------------------------------//
-
-
 
 bool ProcessCommandLineArguments (int argc, char *argv[]) {
     bool useTesting = 0;
@@ -84,7 +81,7 @@ bool ProcessCommandLineArguments (int argc, char *argv[]) {
 
     if (useTesting) {
         TestSolver ();
-	return 1;
+    return 1;
     }
 
     return 0;
@@ -113,4 +110,3 @@ int main (int argc, char *argv[]) {
     
     return 0;
 }
-

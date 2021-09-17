@@ -9,4 +9,3 @@ void TestSolveQuadratic ();
 void TestSolver         ();
 
 #endif
-
