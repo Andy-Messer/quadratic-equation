@@ -36,18 +36,18 @@ void ReadCoefficients (double *a, double *b, double *c) {
 //--------------------------------------------------------------------------//
 
 //--------------------------------------------------------------------------//
-/*! \fn void WriteAnswer (int nRoots, double x1, double x2)
- *  \brief Outputs the answer of quadratic equations
- *  \param [in] nRoots number of roots
+/*! \fn void WriteAnswer (int numberOfRoots, double x1, double x2)
+ *  \brief Output the answer of quadratic equations
+ *  \param [in] numberOfRoots number of roots
  *  \param [in] x1 first  root
  *  \param [in] x2 second root
  */
 //--------------------------------------------------------------------------//
-void WriteAnswer (int nRoots, double x1, double x2) {
+void WriteAnswer (int numberOfRoots, double x1, double x2) {
     assert (isfinite (x1));
     assert (isfinite (x2));
 
-    switch (nRoots) {
+    switch (numberOfRoots) {
         case NO_ROOTS:
             printf ("No roots\n");
             break;
@@ -65,7 +65,7 @@ void WriteAnswer (int nRoots, double x1, double x2) {
             break;
 
         default:
-            printf ("main(): ERROR: nRooTs = %d\n", nRoots);
+            printf ("main(): ERROR: nRooTs = %d\n", numberOfRoots);
     }
 }
 
@@ -81,14 +81,15 @@ bool ProcessCommandLineArguments (int argc, char *argv[]) {
 
     if (useTesting) {
         TestSolver ();
-    return 1;
+
+	return true;
     }
 
     return 0;
 }
 
 int main (int argc, char *argv[]) {
-    printf ("# Square equation solver\n"
+    printf ("# Quadratic equation solver\n"
             "# (c) Krot, 2021\n\n");
 
     bool useTesting = ProcessCommandLineArguments (argc, argv);
@@ -103,10 +104,11 @@ int main (int argc, char *argv[]) {
 
         double x1 = 0;
         double x2 = 0;
-        int nRoots = SolveQuadratic (a, b, c, &x1, &x2);
+        int numberOfRoots = SolveQuadratic (a, b, c, &x1, &x2);
 
-        WriteAnswer (nRoots, x1, x2);
+        WriteAnswer (numberOfRoots, x1, x2);
     }
     
     return 0;
 }
+

@@ -47,15 +47,16 @@ int SolveLinear (double a, double b, double *x) {
 
     if (CompareDouble (a, 0) == 0) {
         if (CompareDouble (b, 0) == 0) {
-                return INF_ROOTS;
+            return INF_ROOTS;
         } else { 
-                return NO_ROOTS;        
+            return NO_ROOTS;        
         }
     } else  if (CompareDouble (b, 0) == 0) {
         return NO_ROOTS;
     } else {
         *x = (-b) / a;
-        return ONE_ROOT;
+    
+	return ONE_ROOT;
     }
 
     return 0;
@@ -88,19 +89,19 @@ int SolveQuadratic (double a, double b, double c, double *x1, double *x2) {
     assert (isfinite (c));
 
     if (CompareDouble (a, 0) == 0) {
-        int nRoots = SolveLinear (b, c, x1); 
+        int numberOfRoots = SolveLinear (b, c, x1); 
         *x2 = *x1;
         
-    return nRoots;
+	return numberOfRoots;
     }
     
     if (CompareDouble (b, 0) == 0) {
         if (CompareDouble (c, 0) == 0) {
             *x1 = (*x2 = 0);
-        
-        return ONE_ROOT;
+
+            return ONE_ROOT;
         } else if (CompareDouble (c, 0) == CompareDouble (a, 0)) {
-        return NO_ROOTS;
+            return NO_ROOTS;
         } else{
             *x1 = sqrt ((-c) / a );
             *x2 = -(*x1);
@@ -130,3 +131,4 @@ int SolveQuadratic (double a, double b, double c, double *x1, double *x2) {
     return 0;
 }
 //--------------------------------------------------------------------------//
+
