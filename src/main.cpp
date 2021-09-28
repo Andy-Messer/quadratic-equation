@@ -82,10 +82,10 @@ bool ProcessCommandLineArguments (int argc, char *argv[]) {
     if (useTesting) {
         TestSolver ();
 
-	return true;
+        return true;
     }
 
-    return 0;
+    return false;
 }
 
 int main (int argc, char *argv[]) {
